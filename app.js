@@ -5,13 +5,19 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('./models/model');
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://ustxtr22.cloudapp.net:27017/tr22demo');
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var transactions = require('./routes/transactions');
 
 var app = express();
 
-// view engine setup
+// view engine setup 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 

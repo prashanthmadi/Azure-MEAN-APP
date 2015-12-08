@@ -1,6 +1,6 @@
 {
-  "name": "sampleapp",
-  "version": "0.0.0",
+  "name": "MEAN",
+  "version": "0.5.2",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -13,5 +13,18 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "Sample MEAN stack app",
+  "main": "bin/www",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prashanthmadi/azure-nodejs-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prashanthmadi/azure-nodejs-angular/issues"
+  },
+  "homepage": "https://github.com/prashanthmadi/azure-nodejs-angular"
 }

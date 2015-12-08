@@ -1,0 +1,18 @@
+Make a wish!
+
+<div ng-controller="WishRequestController">
+  <form novalidate class="simple-form">
+
+  Item Name: <input type="text" ng-model="user.itemName" /><br />
+  Item Description: <input type="text" ng-model="user.itemDesc" /><br />
+  Estimated Item Cost: <input type="text" ng-model="user.itemCost" /><br />
+  First Name: <input type="text" ng-model="user.firstname" /><br />
+  Last Name: <input type="text" ng-model="user.lastname" /><br />
+  Email: <input type="email" ng-model="user.email" />
+  Phone No: <input type="text" ng-model="user.phoneno" /><br />
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(user)" value="Save" />
+  </form>
+
+
+</div>

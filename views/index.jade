@@ -1,12 +1,8 @@
 extends layout
 
 block content
+
     div(ng-app='giveCampaign')
-        ul
-            li
-                a(href='/donorlist') Donors list
-            li
-                a(href='/receivertrans') Receivers
         div(ng-view)
     script(src='js/angularmodules/angular.min.js')
     script(src='js/app.js')

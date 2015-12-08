@@ -3,11 +3,11 @@
 
 	app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider) {
 
-		$routeProvider.when('/donorlist', {templateUrl:"templates/donorlist.html",controller:'RecentDonorController'}).when('/receivertrans',{templateUrl:"templates/receiver.html",controller:'RecentRequestController'}).otherwise({redirectTo: '/abc'});
+		$routeProvider.when('/donorlist', {templateUrl:"templates/donorlist.html",controller:'RecentDonorController'}).when('/receivertrans',{templateUrl:"templates/receiver.html",controller:'RecentRequestController'}).when('/wishrequest', {templateUrl:"templates/wishrequest.html",controller:'WishRequestController'}).otherwise({redirectTo: '/receivertrans'});
 		$locationProvider.hashPrefix('!').html5Mode(true);
 	}]);
 
-	var recentDonorListUrl ="/api/recentdonorlist";
+	var recentDonorListUrl ="/api/gifteditems";
 	app.controller('RecentDonorController', function($scope, $http) {
 		var context = this;
 		context.recentTransactions = [];
@@ -17,19 +17,31 @@
                 });
 	});
 
-	var recentReqListUrl ="/api/recentgiverequest";
+	var recentReqListUrl ="/api/wishlist";
 	app.controller('RecentRequestController', function($scope, $http) {
 		var context = this;
-		context.recentTransactions = [];
+		context.recentTransactions = []; 
         $http.get(recentReqListUrl)
                 .success(function(response) {
                     context.recentTransactions= response;
                 });
 	});
 
-	app.controller('ReceiverController',function(){
-		
-	});
+
+	var wishReqUrl ="/api/wishrequest";
+	app.controller('WishRequestController', ['$scope','$http', function($scope,$http) {
+      $scope.master = {};
+
+      $scope.update = function(user) {
+      	$http.post(wishReqUrl, user);
+      };
+
+      $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+      };
+
+      $scope.reset();
+    }]);
 
  })();
 

@@ -1,5 +1,21 @@
 <div ng-controller="RecentRequestController as reqCtrl">
-	   <div ng-repeat="transaction in reqCtrl.recentTransactions">
-	       <div>{{transaction.donatedTo}} is in need of {{transaction.item}} worth {{transaction.cost | currency}}</div>
-	   </div>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+            <div class="well">
+				   <div ng-repeat="transaction in reqCtrl.recentTransactions">
+                    <div class="row">
+                        <div class="col-md-12">
+{{transaction.reqProfileId.firstName}} is in need of {{transaction.itemName}} worth {{transaction.cost | currency}}
+                            <span class="pull-right">12 days ago</span>
+                        </div>
+                    </div>
+                    <hr>
+                    
+	   		</div>
+	   		</div>
+            </div>
+        </div>
+    </div>
 </div>
