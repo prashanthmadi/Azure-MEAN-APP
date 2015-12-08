@@ -1,11 +1,5 @@
-<div ng-controller="ReceiverController as recCtrl">
-        <form name="needForm">
-            <label>Name: </label>
-            <input ng-model="item.name" type="text" />
-            <label>Email: </label>
-            <input ng-model="item.email" type="email" />
-            <label>Need: </label>
-            <input ng-model="item.name" type="text" />
-
-        </form>
+<div ng-controller="RecentRequestController as reqCtrl">
+	   <div ng-repeat="transaction in reqCtrl.recentTransactions">
+	       <div>{{transaction.donatedTo}} is in need of {{transaction.item}} worth {{transaction.cost | currency}}</div>
+	   </div>
 </div>
