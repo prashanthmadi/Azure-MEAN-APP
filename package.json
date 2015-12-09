@@ -1,5 +1,5 @@
 {
-  "name": "MEAN",
+  "name": "demo",
   "version": "0.5.2",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "mongoose": "^4.2.10",
+    "mongoose-auto-increment": "^5.0.1",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   },
@@ -19,7 +21,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/prashanthmadi/azure-nodejs-angular.git"
+    "url": "git+https://github.com/prashanthmadi/azure-nodejs-angular.git"
   },
   "author": "",
   "license": "ISC",

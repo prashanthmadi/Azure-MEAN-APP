@@ -5,11 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+
 require('./models/model');
-
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://ustxtr22.cloudapp.net:27017/tr22demo');
-
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

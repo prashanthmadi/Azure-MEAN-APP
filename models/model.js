@@ -1,4 +1,11 @@
 var mongoose = require('mongoose');
+var autoIncrement = require('mongoose-auto-increment');
+
+mongoose.connect('mongodb://ustxtr22.cloudapp.net:27017/tr22demo');
+
+var db = mongoose.connection;
+autoIncrement.initialize(db);
+
 var Schema = mongoose.Schema;
 
 var requestSchema = new Schema({
@@ -22,6 +29,9 @@ emailAddress: String,
 role: String,
 phone: String
 });
+
+profileSchema.plugin(autoIncrement.plugin, {model: 'Profile', field: 'profileId'});
+requestSchema.plugin(autoIncrement.plugin, {model: 'Request', field: 'requestId'});
 
 mongoose.model('Profile',profileSchema); 
 mongoose.model('Request', requestSchema);
