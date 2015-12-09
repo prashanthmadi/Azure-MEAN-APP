@@ -30,6 +30,9 @@ role: String,
 phone: String
 });
 
+requestSchema.index({"reqProfileId":1,"itemName":1,"itemRequestedDate":1},{unique: true});
+profileSchema.index({"emailAddress":1},{unique: true}); 
+
 profileSchema.plugin(autoIncrement.plugin, {model: 'Profile', field: 'profileId'});
 requestSchema.plugin(autoIncrement.plugin, {model: 'Request', field: 'requestId'});
 
